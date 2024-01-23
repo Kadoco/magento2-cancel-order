@@ -1,0 +1,16 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Kadoco\CancelOrder\ViewModel\CancelOrderInformationProvider $cancelOrderInformationProvider */
+$cancelOrderInformationProvider = $block->getData('CancelOrderInformationProvider');
+?>
+<?php if ($cancelOrderInformationProvider->canCancelOrder()): ?>
+<div class="cancel-order">
+    <div class="primary secondary home-login-top desktop">
+        <a href="<?=$cancelOrderInformationProvider->getCancelUrl()?>" class="action secondary primary">
+            <span>
+                <?=__('Cancel order')?>
+            </span>
+        </a>
+    </div>
+</div>
+<?php endif; ?>
